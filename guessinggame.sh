@@ -13,7 +13,10 @@ do
   read guess
   echo "You guessed: $guess"
 
-  if [[ $guess -eq $answer ]]
+  if [[ ! $guess =~ ^[0-9]+$ ]]
+  then
+    echo "type a number"
+  elif [[ $guess -eq $answer ]]
   then
     echo "Correct!"
     correct=0
