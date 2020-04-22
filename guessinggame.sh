@@ -1,23 +1,26 @@
 
-
 answer=$(ls | wc -l)
-correct=false
+correct=1
 
-echo "How many files are in the working directory?"
-echo "Type in a number and then press Enter:"
-read guess
-echo "You guessed: $guess"
+function askquestion {
+  echo "How many files are in the working directory?"
+  echo "Type in a number and then press Enter:"
+}
 
-while [[$correct -eq 1]]
+while [[ $correct -eq 1 ]]
 do
-  if [[$guess -eq $answer]]
+  askquestion
+  read guess
+  echo "You guessed: $guess"
+
+  if [[ $guess -eq $answer ]]
   then
     echo "Correct!"
     correct=0
-  elif [[$guess -gt $answer]]
+  elif [[ $guess -gt $answer ]]
   then
     echo "Too high"
-  elif [[$guess -lt $answer]]
+  elif [[ $guess -lt $answer ]]
   then
     echo "Too low"
   fi
