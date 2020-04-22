@@ -1,18 +1,19 @@
 
-answer=$(ls | wc -l)
+answer=$(ls -A | wc -l)
 correct=1
 
 function askquestion {
-  echo "How many files are in the working directory?"
+  echo "How many files are in the current directory?"
   echo "Type in a number and then press Enter:"
 }
 
 while [[ $correct -eq 1 ]]
 do
   askquestion
-  read guess
-  echo "You guessed: $guess"
 
+  read guess
+
+  echo "You guessed: $guess"
   if [[ ! $guess =~ ^[0-9]+$ ]]
   then
     echo "type a number"
