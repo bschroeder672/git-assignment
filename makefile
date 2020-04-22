@@ -1,6 +1,6 @@
-README.txt
-	echo "git-assignment" > README.txt
-	echo "date and time that make was run"
-	date
-	echo "lines of code in guessinggame.sh: "
-	wc -l guessinggame.sh >> README.txt
+README.md:
+	echo "git-assignment" > README.md
+	echo "date and time that make was run: " >> README.md
+	date >> README.md
+	echo "lines of code in guessinggame.sh: " >> README.md
+	wc -l guessinggame.sh >> README.md
